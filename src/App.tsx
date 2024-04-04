@@ -1,6 +1,7 @@
 import { CVData } from "./types/types";
 
 import './app.scss';
+import { Header } from "./components/Header/Header";
   
   const cvData: CVData = {
     photo: 'https://placehold.co/400x400?text=JK',
@@ -24,9 +25,7 @@ export const App = () => {
     return (
         <div className="App">
             <main className='cv-main'>
-                <header className='cv-header'>
-                    <h1>CV {cvData.name} {cvData.lastName}</h1>
-                </header>
+                <Header name={cvData.name} lastName={cvData.lastName}/>
                 <aside className='cv-personal'>
                     <h2>Personal data</h2>
                     <img className='cv-photo' src={cvData.photo} alt={`${cvData.name} ${cvData.lastName} profile photo.`} />
