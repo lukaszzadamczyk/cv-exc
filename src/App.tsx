@@ -1,4 +1,6 @@
-import { CVData } from "./types/types"
+import { CVData } from "./types/types";
+
+import './app.scss';
   
   const cvData: CVData = {
     photo: 'https://placehold.co/400x400?text=JK',
