@@ -24,12 +24,15 @@ import './app.scss';
   }
 
 export const App = () => {
+
+    const { name, lastName, photo, position, experience, education } = cvData;
+
     return (
         <div className="App">
             <main className='cv-main'>
-                <Header name={cvData.name} lastName={cvData.lastName}/>
-                <Personal name={cvData.name} lastName={cvData.lastName} photo={cvData.photo} position={cvData.position}/>
-                <Details experience={cvData.experience} education={cvData.education}/>
+                <Header name={name} lastName={lastName}/>
+                <Personal name={name} lastName={lastName} photo={photo} position={position}/>
+                <Details experience={experience} education={education}/>
             </main>
         </div>
     )
