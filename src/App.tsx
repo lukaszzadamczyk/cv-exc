@@ -1,6 +1,7 @@
 import { Header } from "./components/Header/Header";
 import { Personal } from "./components/Personal/Personal";
 import { CVData } from "./types/types";
+import { Details } from "./components/Details/Details";
 
 import './app.scss';
   
@@ -28,22 +29,7 @@ export const App = () => {
             <main className='cv-main'>
                 <Header name={cvData.name} lastName={cvData.lastName}/>
                 <Personal name={cvData.name} lastName={cvData.lastName} photo={cvData.photo} position={cvData.position}/>
-                <section className='cv-details'>
-                    <h2>Experience</h2>
-                    <ul>
-                    {cvData.experience.map(experience => (
-                        <li key={experience.year}>
-                        <strong>{experience.year}</strong> - {experience.description}
-                        </li>
-                    ))}
-                    </ul>
-                    <h2>Education</h2>
-                    <ul>
-                    {cvData.education.map((education, index) => (
-                        <li key={index}>{education}</li>
-                    ))}
-                    </ul>
-                </section>
+                <Details experience={cvData.experience} education={cvData.education}/>
             </main>
         </div>
     )
