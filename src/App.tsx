@@ -1,16 +1,9 @@
-interface Experience {
-    year: number;
-    description: string;
-  }
-  
-  interface CVData {
-    photo: string;
-    name: string;
-    lastName: string;
-    position: string;
-    experience: Experience[];
-    education: string[];
-  }
+import { Header } from "./components/Header/Header";
+import { Personal } from "./components/Personal/Personal";
+import { CVData } from "./types/types";
+import { Details } from "./components/Details/Details";
+
+import './app.scss';
   
   const cvData: CVData = {
     photo: 'https://placehold.co/400x400?text=JK',
@@ -31,34 +24,15 @@ interface Experience {
   }
 
 export const App = () => {
+
+    const { name, lastName, photo, position, experience, education } = cvData;
+
     return (
         <div className="App">
             <main className='cv-main'>
-                <header className='cv-header'>
-                    <h1>CV {cvData.name} {cvData.lastName}</h1>
-                </header>
-                <aside className='cv-personal'>
-                    <h2>Personal data</h2>
-                    <img className='cv-photo' src={cvData.photo} alt={`${cvData.name} ${cvData.lastName} profile photo.`} />
-                    <p>{cvData.name} {cvData.lastName}</p>
-                    <small>{cvData.position}</small>
-                </aside>
-                <section className='cv-details'>
-                    <h2>Experience</h2>
-                    <ul>
-                    {cvData.experience.map(experience => (
-                        <li key={experience.year}>
-                        <strong>{experience.year}</strong> - {experience.description}
-                        </li>
-                    ))}
-                    </ul>
-                    <h2>Education</h2>
-                    <ul>
-                    {cvData.education.map((education, index) => (
-                        <li key={index}>{education}</li>
-                    ))}
-                    </ul>
-                </section>
+                <Header name={name} lastName={lastName}/>
+                <Personal name={name} lastName={lastName} photo={photo} position={position}/>
+                <Details experience={experience} education={education}/>
             </main>
         </div>
     )
