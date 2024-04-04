@@ -1,4 +1,4 @@
-interface Experience {
+export interface Experience {
     year: number;
     description: string;
   }
