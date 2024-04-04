@@ -1,0 +1,14 @@
+$main-gap: 20px;
+
+.cv-personal {
+    grid-area: personal;
+    padding: $main-gap;
+    background-color: #eee;
+    text-align: center;
+
+    .cv-photo {
+        width: 100%;
+        margin: $main-gap 0;
+        border-radius: 50%;
+    }
+}
