@@ -1,16 +1,4 @@
-interface Experience {
-    year: number;
-    description: string;
-  }
-  
-  interface CVData {
-    photo: string;
-    name: string;
-    lastName: string;
-    position: string;
-    experience: Experience[];
-    education: string[];
-  }
+import { CVData } from "./types/types"
   
   const cvData: CVData = {
     photo: 'https://placehold.co/400x400?text=JK',
